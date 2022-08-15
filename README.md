@@ -1,8 +1,12 @@
-
-[1]   .so library
-gcc -fPIC -shared test.c -o libtest.so
-
-[2] c program base on .so library
-gcc main.c -o m ./libtest.so
-
-g++ main.cpp add_so.cpp -o run
+This is a test of two .so  files have same function parameters,exceptionally math.cpp including add.cpp
+/*-----------[1]------------------so in so -----------------*/
+ $ add.sh
+            -> out libadd.so
+ $ add_math.sh
+            -> out libmath.so    which need libadd.so
+/*----------[2]-------------------.cpp in so -----so adhere to cpp----------*/
+ $ add_math_s
+            -> out libmath_s.so
+/*---------[3]---------------------main-------------------------------*/
+ $ main.sh
+            -> out run_l
